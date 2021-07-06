@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './styles.module.css'
 
-const Header = () => {
+const Header = (props) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerLinks}>
@@ -11,7 +11,9 @@ const Header = () => {
         <a href="../App/App.js">Картинки</a>
       </div>
       <div className={`${styles.headerLinks} ${styles.userLink}`}>
-        <a href="../App/App.js">А</a>
+        <a href="../App/App.js">
+          { props.user[0] }
+        </a>
       </div>
     </header>
   )

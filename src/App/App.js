@@ -7,9 +7,9 @@ import Footer from './Footer';
 const App = () => {
   return (
     <div className={styles.wrapper}>
-      <Header/>
+      <Header user = "Ирина" />
       <Main/>
-      <Footer/>
+      <Footer country = "Беларусь"/>
     </div>
   );
 }
