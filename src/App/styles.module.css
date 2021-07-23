@@ -1,11 +1,7 @@
 body {
   margin: 0;
 }
-<<<<<<< HEAD
 
-=======
-  
->>>>>>> 133c2730a734eaf54bd7dfb5de5263a1cae032bc
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -13,7 +9,3 @@ body {
   min-height: 100vh;
   background-color: white;
 }
-<<<<<<< HEAD
-=======
-  
->>>>>>> 133c2730a734eaf54bd7dfb5de5263a1cae032bc
