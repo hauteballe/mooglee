@@ -25,10 +25,10 @@ const RandomRectangle = ({ value, onHide, show }) => {
     <div>
       {show && (
         <div className={classes}>
-          <button onClick={onHide}>
+          <button className={styles.iconButton} onClick={onHide}>
             <CloseIcon />
           </button>
-          <span>{value}</span>
+          <span className={styles.randomNumber}>{value}</span>
         </div>
       )}
     </div>
@@ -63,19 +63,26 @@ const Main = () => {
       <img className={styles.logo} src={logo} alt='Logo' />
       <input className={styles.input}></input>
       <div className={styles.buttons}>
-        <button className={styles.button}>Поиск Moogle</button>
-        <button
-          className={styles.button}
-          disabled={isButtonClicked}
-          onClick={onButtonClick}
-        >
-          {getButtonText()}
-        </button>
-        <RandomRectangle
-          value={rectangleContent}
-          show={Boolean(rectangleContent)}
-          onHide={() => setRectangleContent(null)}
-        />
+        <div className={styles.buttonsColumn}></div>
+        <div className={styles.buttonsColumn}>
+          <button className={styles.button}>Поиск Moogle</button>
+        </div>
+        <div className={styles.buttonsColumn}>
+          <button
+            className={styles.button}
+            disabled={isButtonClicked}
+            onClick={onButtonClick}
+          >
+            {getButtonText()}
+          </button>
+        </div>
+        <div className={styles.buttonsColumn}>
+          <RandomRectangle
+            value={rectangleContent}
+            show={Boolean(rectangleContent)}
+            onHide={() => setRectangleContent(null)}
+          />
+        </div>
       </div>
       <p className={styles.text}>
         Сервисы Moogle доступны на разных языках:
