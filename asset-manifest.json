@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/mooglee/static/css/main.667dbf49.chunk.css",
-    "main.js": "/mooglee/static/js/main.e1537d21.chunk.js",
-    "main.js.map": "/mooglee/static/js/main.e1537d21.chunk.js.map",
+    "main.js": "/mooglee/static/js/main.8e75c543.chunk.js",
+    "main.js.map": "/mooglee/static/js/main.8e75c543.chunk.js.map",
     "runtime-main.js": "/mooglee/static/js/runtime-main.2d096f42.js",
     "runtime-main.js.map": "/mooglee/static/js/runtime-main.2d096f42.js.map",
-    "static/js/2.693925ea.chunk.js": "/mooglee/static/js/2.693925ea.chunk.js",
-    "static/js/2.693925ea.chunk.js.map": "/mooglee/static/js/2.693925ea.chunk.js.map",
+    "static/js/2.a6d2c57d.chunk.js": "/mooglee/static/js/2.a6d2c57d.chunk.js",
+    "static/js/2.a6d2c57d.chunk.js.map": "/mooglee/static/js/2.a6d2c57d.chunk.js.map",
     "static/js/3.82fc8670.chunk.js": "/mooglee/static/js/3.82fc8670.chunk.js",
     "static/js/3.82fc8670.chunk.js.map": "/mooglee/static/js/3.82fc8670.chunk.js.map",
     "index.html": "/mooglee/index.html",
     "static/css/main.667dbf49.chunk.css.map": "/mooglee/static/css/main.667dbf49.chunk.css.map",
-    "static/js/2.693925ea.chunk.js.LICENSE.txt": "/mooglee/static/js/2.693925ea.chunk.js.LICENSE.txt",
+    "static/js/2.a6d2c57d.chunk.js.LICENSE.txt": "/mooglee/static/js/2.a6d2c57d.chunk.js.LICENSE.txt",
     "static/media/logo.722ef4fa.png": "/mooglee/static/media/logo.722ef4fa.png"
   },
   "entrypoints": [
     "static/js/runtime-main.2d096f42.js",
-    "static/js/2.693925ea.chunk.js",
+    "static/js/2.a6d2c57d.chunk.js",
     "static/css/main.667dbf49.chunk.css",
-    "static/js/main.e1537d21.chunk.js"
+    "static/js/main.8e75c543.chunk.js"
   ]
 }
