@@ -1,39 +1,8 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './styles.module.css';
+import RandomRectangle from './RandomRectangle';
 import logo from './logo.png';
-
-const CloseIcon = () => {
-  return (
-    <div>
-      <FontAwesomeIcon icon={faTimes} />
-    </div>
-  );
-};
-
-const RandomRectangle = ({ value, onHide, show }) => {
-  const classes = classNames(styles.rectangle, {
-    [styles.green]: value >= 700,
-    [styles.yellow]: value > 300 && value < 700,
-    [styles.red]: value <= 300,
-  });
-
-  return (
-    <div>
-      {show && (
-        <div className={classes}>
-          <button className={styles.iconButton} onClick={onHide}>
-            <CloseIcon />
-          </button>
-          <span className={styles.randomNumber}>{value}</span>
-        </div>
-      )}
-    </div>
-  );
-};
 
 const Main = () => {
   const [rectangleContent, setRectangleContent] = useState(null);
@@ -48,15 +17,7 @@ const Main = () => {
     }, 5000);
   };
 
-  const getButtonText = () => {
-    if (isButtonClicked) {
-      return 'Хмм...';
-    } else {
-      return 'Мне повезёт!';
-    }
-  };
-
-  console.log('Render component');
+  const buttonText = isButtonClicked ? 'Хмм...' : 'Мне повезет!';
 
   return (
     <main>
@@ -73,7 +34,7 @@ const Main = () => {
             disabled={isButtonClicked}
             onClick={onButtonClick}
           >
-            {getButtonText()}
+            {buttonText}
           </button>
         </div>
         <div className={styles.buttonsColumn}>
