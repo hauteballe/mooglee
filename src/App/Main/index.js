@@ -1,23 +1,61 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styles from './styles.module.css';
-import logo from './logo.png'
+import RandomRectangle from './RandomRectangle';
+import logo from './logo.png';
 
 const Main = () => {
+  const [rectangleContent, setRectangleContent] = useState(null);
+  const [isButtonClicked, setButtonClicked] = useState(false);
+
+  const onButtonClick = () => {
+    setButtonClicked(true);
+
+    setTimeout(() => {
+      setButtonClicked(false);
+      setRectangleContent(Math.floor(Math.random() * 1000) + 1);
+    }, 5000);
+  };
+
+  const buttonText = isButtonClicked ? 'Хмм...' : 'Мне повезет!';
+
   return (
     <main>
-      <img className={styles.logo} src={logo} alt="Logo" />
+      <img className={styles.logo} src={logo} alt='Logo' />
       <input className={styles.input}></input>
       <div className={styles.buttons}>
-        <button className={styles.button}>Поиск Moogle</button>
-        <button className={styles.button}>Мне повезёт!</button>
+        <div className={styles.buttonsColumn}></div>
+        <div className={styles.buttonsColumn}>
+          <button className={styles.button}>Поиск Moogle</button>
+        </div>
+        <div className={styles.buttonsColumn}>
+          <button
+            className={styles.button}
+            disabled={isButtonClicked}
+            onClick={onButtonClick}
+          >
+            {buttonText}
+          </button>
+        </div>
+        <div className={styles.buttonsColumn}>
+          <RandomRectangle
+            value={rectangleContent}
+            show={Boolean(rectangleContent)}
+            onHide={() => setRectangleContent(null)}
+          />
+        </div>
       </div>
-      <p className={styles.text}>Сервисы Moogle доступны на разных языках:
-        <a className={styles.textLink} href="../App/App.js">English</a>
-        <a className={styles.textLink} href="../App/App.js">Spain</a>
+      <p className={styles.text}>
+        Сервисы Moogle доступны на разных языках:
+        <a className={styles.textLink} href='../App/App.js'>
+          English
+        </a>
+        <a className={styles.textLink} href='../App/App.js'>
+          Spain
+        </a>
       </p>
     </main>
-  )
-}
+  );
+};
 
 export default Main;
