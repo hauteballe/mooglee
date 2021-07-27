@@ -15,13 +15,13 @@ const usePresenter = () => {
     }, 5000);
   };
 
-  return [
+  return {
     rectangleContent,
     setRectangleContent,
     isButtonClicked,
     onButtonClick,
     buttonText,
-  ];
+  };
 };
 
 export default usePresenter;

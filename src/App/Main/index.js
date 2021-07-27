@@ -3,16 +3,16 @@ import React from 'react';
 import styles from './styles.module.css';
 import RandomRectangle from './RandomRectangle';
 import logo from './logo.png';
-import usePresenter from './Hooks/usePresenter';
+import usePresenter from './hooks/usePresenter';
 
 const Main = () => {
-  const [
+  const {
     rectangleContent,
     setRectangleContent,
     isButtonClicked,
     onButtonClick,
     buttonText,
-  ] = usePresenter();
+  } = usePresenter();
 
   return (
     <main>
