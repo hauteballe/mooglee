@@ -1,23 +1,18 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import styles from './styles.module.css';
 import RandomRectangle from './RandomRectangle';
 import logo from './logo.png';
+import usePresenter from './hooks/usePresenter';
 
 const Main = () => {
-  const [rectangleContent, setRectangleContent] = useState(null);
-  const [isButtonClicked, setButtonClicked] = useState(false);
-
-  const onButtonClick = () => {
-    setButtonClicked(true);
-
-    setTimeout(() => {
-      setButtonClicked(false);
-      setRectangleContent(Math.floor(Math.random() * 1000) + 1);
-    }, 5000);
-  };
-
-  const buttonText = isButtonClicked ? 'Хмм...' : 'Мне повезет!';
+  const {
+    rectangleContent,
+    setRectangleContent,
+    isButtonClicked,
+    onButtonClick,
+    buttonText,
+  } = usePresenter();
 
   return (
     <main>
