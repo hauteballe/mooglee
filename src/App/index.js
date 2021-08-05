@@ -20,7 +20,6 @@ const App = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <Header
-          user='Ирина'
           isSearchModeEnabled={isSearchModeEnabled}
           disableSearchMode={disableSearchMode}
           searchText={searchText}

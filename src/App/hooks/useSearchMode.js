@@ -32,12 +32,15 @@ const useSearchMode = () => {
 
   const disableSearchMode = () => {
     setSearchModeEnabled(false);
+    setSearchResult([]);
   };
 
   const search = (text) => {
     setSearchText(text);
     if (text === 'javascript') {
       setSearchResult(jsSearchResult);
+    } else {
+      setSearchResult([]);
     }
   };
 

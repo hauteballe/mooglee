@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
-const usePresenter = () => {
+const usePresenter = ({ enableSearchMode, isSearchModeEnabled, search }) => {
   const [rectangleContent, setRectangleContent] = useState(null);
   const [isButtonClicked, setButtonClicked] = useState(false);
   const [isCloseButtonClicked, setCloseButtonClicked] = useState(false);
+  const [inputValue, setInputValue] = useState('');
 
   const buttonText = isButtonClicked ? 'Хмм...' : 'Мне повезет!';
 
@@ -20,6 +21,15 @@ const usePresenter = () => {
     setCloseButtonClicked(true);
   };
 
+  const onSearchButtonClick = () => {
+    enableSearchMode();
+    search(inputValue);
+  };
+
+  const onInput = (event) => {
+    setInputValue(event.target.value);
+  };
+
   return {
     rectangleContent,
     setRectangleContent,
@@ -28,6 +38,12 @@ const usePresenter = () => {
     buttonText,
     isCloseButtonClicked,
     onCloseButtonClick,
+    inputValue,
+    setInputValue,
+    onSearchButtonClick,
+    onInput,
+    enableSearchMode,
+    search,
   };
 };
 

@@ -16,13 +16,6 @@
   gap: 40px;
 }
 
-.closeButton {
-  background-color: transparent;
-  border: none;
-  color: #2f4f4f;
-  font-size: medium;
-}
-
 .headerLinks {
   margin-right: 15px;
 }

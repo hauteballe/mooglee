@@ -13,17 +13,4 @@ const SearchItem = ({ item }) => {
   );
 };
 
-const Search = ({ searchResult }) => {
-  return (
-    <div className={styles.searchResultsWrapper}>
-      <p className={styles.searchResultsNumber}>
-        Найдено ссылок: {searchResult.length}
-      </p>
-      {searchResult.map((item, key) => (
-        <SearchItem item={item} />
-      ))}
-    </div>
-  );
-};
-
-export default Search;
+export default SearchItem;

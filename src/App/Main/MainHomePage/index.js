@@ -1,31 +1,22 @@
 import React from 'react';
-import { useState } from 'react';
 
 import styles from './styles.module.css';
 import RandomRectangle from '../RandomRectangle';
 import usePresenter from '../hooks/usePresenter';
-import Logo from '../../Logo';
-import Input from '../../Input';
+import Logo from '../../components/Logo';
+import Input from '../../components/Input';
 
 const MainHomePage = ({ enableSearchMode, isSearchModeEnabled, search }) => {
-  const [inputValue, setInputValue] = useState('');
-
   const {
     rectangleContent,
     setRectangleContent,
     isButtonClicked,
     onButtonClick,
     buttonText,
-  } = usePresenter();
-
-  const onSearchButtonClick = () => {
-    enableSearchMode();
-    search(inputValue);
-  };
-
-  const onInput = (event) => {
-    setInputValue(event.target.value);
-  };
+    inputValue,
+    onSearchButtonClick,
+    onInput,
+  } = usePresenter({ enableSearchMode, search });
 
   return (
     <div className={styles.mainWrapper}>

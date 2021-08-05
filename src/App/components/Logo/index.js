@@ -1,7 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 
 import styles from './styles.module.css';
-import classNames from 'classnames';
 import logo from '../Logo/logo.png';
 
 const Logo = ({ size = 'regular' }) => {
