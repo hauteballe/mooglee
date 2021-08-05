@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/mooglee/static/css/main.c2d2b085.chunk.css",
-    "main.js": "/mooglee/static/js/main.ac49e397.chunk.js",
-    "main.js.map": "/mooglee/static/js/main.ac49e397.chunk.js.map",
+    "main.js": "/mooglee/static/js/main.1ee49c50.chunk.js",
+    "main.js.map": "/mooglee/static/js/main.1ee49c50.chunk.js.map",
     "runtime-main.js": "/mooglee/static/js/runtime-main.e81409a9.js",
     "runtime-main.js.map": "/mooglee/static/js/runtime-main.e81409a9.js.map",
     "static/js/2.beeb1265.chunk.js": "/mooglee/static/js/2.beeb1265.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.e81409a9.js",
     "static/js/2.beeb1265.chunk.js",
     "static/css/main.c2d2b085.chunk.css",
-    "static/js/main.ac49e397.chunk.js"
+    "static/js/main.1ee49c50.chunk.js"
   ]
 }
