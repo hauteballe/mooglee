@@ -37,7 +37,7 @@ const useSearchMode = () => {
 
   const search = (text) => {
     setSearchText(text);
-    if (text === 'javascript') {
+    if (text.toLowerCase() === 'javascript') {
       setSearchResult(jsSearchResult);
     } else {
       setSearchResult([]);
