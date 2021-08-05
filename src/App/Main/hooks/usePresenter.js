@@ -3,6 +3,7 @@ import { useState } from 'react';
 const usePresenter = () => {
   const [rectangleContent, setRectangleContent] = useState(null);
   const [isButtonClicked, setButtonClicked] = useState(false);
+  const [isCloseButtonClicked, setCloseButtonClicked] = useState(false);
 
   const buttonText = isButtonClicked ? 'Хмм...' : 'Мне повезет!';
 
@@ -15,12 +16,18 @@ const usePresenter = () => {
     }, 5000);
   };
 
+  const onCloseButtonClick = () => {
+    setCloseButtonClicked(true);
+  };
+
   return {
     rectangleContent,
     setRectangleContent,
     isButtonClicked,
     onButtonClick,
     buttonText,
+    isCloseButtonClicked,
+    onCloseButtonClick,
   };
 };
 
