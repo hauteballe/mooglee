@@ -2,11 +2,11 @@ import React from 'react';
 
 import styles from './styles.module.css';
 import RandomRectangle from '../RandomRectangle';
-import usePresenter from '../hooks/usePresenter';
+import usePresenter from './hooks/usePresenter';
 import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 
-const MainHomePage = ({ enableSearchMode, isSearchModeEnabled, search }) => {
+const MainHomePage = ({ enableSearchMode, search }) => {
   const {
     rectangleContent,
     setRectangleContent,

@@ -4,7 +4,7 @@ import styles from './styles.module.css';
 import Header from './Header';
 import Main from './Main';
 import Footer from './Footer';
-import useSearchMode from './hooks/useSearchMode';
+import usePresenter from './hooks/usePresenter';
 
 const App = () => {
   const {
@@ -14,12 +14,13 @@ const App = () => {
     searchResult,
     search,
     searchText,
-  } = useSearchMode();
+  } = usePresenter();
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <Header
+          user='Ирина'
           isSearchModeEnabled={isSearchModeEnabled}
           disableSearchMode={disableSearchMode}
           searchText={searchText}

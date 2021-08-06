@@ -6,20 +6,16 @@ import SearchHeader from './SearchHeader';
 const Header = ({
   user,
   isSearchModeEnabled,
-  enableSearchMode,
-  search,
   disableSearchMode,
   searchText,
 }) => {
   if (!isSearchModeEnabled) {
-    return <DefaultHeader user='Ирина' enableSearchMode={enableSearchMode} />;
+    return <DefaultHeader user={user} />;
   } else {
     return (
       <SearchHeader
-        user='Ирина'
-        enableSearchMode={enableSearchMode}
+        user={user}
         disableSearchMode={disableSearchMode}
-        search={search}
         searchText={searchText}
       />
     );

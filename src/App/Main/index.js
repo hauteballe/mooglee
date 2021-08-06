@@ -12,7 +12,7 @@ const Main = ({
   if (!isSearchModeEnabled) {
     return <MainHomePage enableSearchMode={enableSearchMode} search={search} />;
   } else {
-    return <MainSearchPage searchResult={searchResult} search={search} />;
+    return <MainSearchPage searchResult={searchResult} />;
   }
 };
 
