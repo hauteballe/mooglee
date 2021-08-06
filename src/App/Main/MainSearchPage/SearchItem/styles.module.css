@@ -1,0 +1,15 @@
+.searchResultTitle {
+  text-decoration: none;
+  color: #1a0dab;
+  font-size: 20px;
+}
+
+.searchResultDescription {
+  font-size: 14px;
+  padding: 5px 0;
+  margin: 0;
+}
+
+.seachResult {
+  padding-bottom: 30px;
+}

@@ -1,22 +1,24 @@
-main {
+.mainContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: stretch;
 }
 
-.logo {
-  width: 272px;
+.closingIcon {
+  border: none;
+  margin: 5px 7px 0 0;
+  font-size: medium;
+  color: #5f6368;
+  background-color: transparent;
+  padding: 0 3px;
+  position: absolute;
+  left: 800px;
+  top: 30px;
 }
 
-.input {
-  margin-top: 30px;
-  width: 500px;
-  height: 50px;
-  border: 1px solid #dfe1e5;
-  border-radius: 24px;
-  outline: none;
-  padding: 0 35px;
+.inputWrapper {
+  padding-top: 30px;
 }
 
 .buttons {
@@ -65,4 +67,11 @@ main {
 .buttonsColumn {
   width: 120px;
   padding: 0 15px;
+}
+
+.mainWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

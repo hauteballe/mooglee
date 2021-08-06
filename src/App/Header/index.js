@@ -1,21 +1,25 @@
 import React from 'react';
 
-import styles from './styles.module.css';
+import DefaultHeader from './DefaultHeader';
+import SearchHeader from './SearchHeader';
 
-const Header = ({ user }) => {
-  return (
-    <header className={styles.header}>
-      <div className={styles.headerLinks}>
-        <a href='../App/App.js'>Почта</a>
-      </div>
-      <div className={styles.headerLinks}>
-        <a href='../App/App.js'>Картинки</a>
-      </div>
-      <div className={`${styles.headerLinks} ${styles.userLink}`}>
-        <a href='../App/App.js'>{user[0]}</a>
-      </div>
-    </header>
-  );
+const Header = ({
+  user,
+  isSearchModeEnabled,
+  disableSearchMode,
+  searchText,
+}) => {
+  if (!isSearchModeEnabled) {
+    return <DefaultHeader user={user} />;
+  } else {
+    return (
+      <SearchHeader
+        user={user}
+        disableSearchMode={disableSearchMode}
+        searchText={searchText}
+      />
+    );
+  }
 };
 
 export default Header;

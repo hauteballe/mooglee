@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 
 import styles from './styles.module.css';
-import CloseIcon from '../CloseIcon';
+import CloseIcon from '../../../components/CloseIcon';
 
 const RandomRectangle = ({ value, onHide, show }) => {
   const classes = classNames(styles.rectangle, {
