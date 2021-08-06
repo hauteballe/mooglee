@@ -1,7 +1,7 @@
 import React from 'react';
 
 import styles from './styles.module.css';
-import RandomRectangle from '../RandomRectangle';
+import RandomRectangle from './RandomRectangle';
 import usePresenter from './hooks/usePresenter';
 import Logo from '../../components/Logo';
 import Input from '../../components/Input';
