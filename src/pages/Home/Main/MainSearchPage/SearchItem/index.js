@@ -1,13 +1,17 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 
 const SearchItem = ({ item }) => {
   return (
     <div className={styles.seachResult}>
-      <a className={styles.searchResultTitle} href={item.link}>
+      <Link
+        to={`/mooglee/article/${item.id}`}
+        className={styles.searchResultTitle}
+      >
         {item.title}
-      </a>
+      </Link>
       <p className={styles.searchResultDescription}>{item.description}</p>
     </div>
   );

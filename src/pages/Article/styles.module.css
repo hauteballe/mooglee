@@ -1,0 +1,26 @@
+.articleWrapper {
+  margin: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.homeButton {
+  background-color: #fff;
+  color: #2f4f4f;
+  border: 1px solid #2f4f4f;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.homeButton:hover {
+  background-color: #2f4f4f;
+  color: #fff;
+}
+
+.articleTitle {
+  color: #2f4f4f;
+  margin-top: 40px;
+}
+
+.articleDescription {
+  margin: 0;
+}
