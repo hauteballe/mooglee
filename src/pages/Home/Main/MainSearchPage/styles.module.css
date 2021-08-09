@@ -1,0 +1,10 @@
+.searchResultsWrapper {
+  width: 600px;
+  padding-left: 170px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.searchResultsNumber {
+  color: #70757a;
+  font-size: 14px;
+}
