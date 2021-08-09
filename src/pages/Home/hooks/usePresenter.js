@@ -1,8 +1,6 @@
 import { useState } from 'react';
 
-import { jsSearchResult } from '../../../const'
-
-
+import { jsSearchResult } from '../../../const';
 
 const usePresenter = () => {
   const [isSearchModeEnabled, setSearchModeEnabled] = useState(false);

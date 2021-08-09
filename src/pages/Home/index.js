@@ -17,21 +17,23 @@ const HomePage = () => {
   } = usePresenter();
 
   return (
-      <div className={styles.wrapper}>
-        <div className={styles.container}>
-          <Header
-            user='Ирина'
-            isSearchModeEnabled={isSearchModeEnabled}
-            disableSearchMode={disableSearchMode}
-            searchText={searchText}
-          />
-          <Main enableSearchMode={enableSearchMode}
+    <div className={styles.wrapper}>
+      <div className={styles.container}>
+        <Header
+          user='Ирина'
+          isSearchModeEnabled={isSearchModeEnabled}
+          disableSearchMode={disableSearchMode}
+          searchText={searchText}
+        />
+        <Main
+          enableSearchMode={enableSearchMode}
           isSearchModeEnabled={isSearchModeEnabled}
           search={search}
-          searchResult={searchResult} />
-        </div>
-        <Footer country='Беларусь' />
+          searchResult={searchResult}
+        />
       </div>
+      <Footer country='Беларусь' />
+    </div>
   );
 };
 

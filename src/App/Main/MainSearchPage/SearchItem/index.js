@@ -6,7 +6,12 @@ import styles from './styles.module.css';
 const SearchItem = ({ item }) => {
   return (
     <div className={styles.seachResult}>
-    <Link to={`/article/${item.id}`} className={styles.searchResultTitle}>{item.title}</Link>
+      <Link
+        to={`/mooglee/article/${item.id}`}
+        className={styles.searchResultTitle}
+      >
+        {item.title}
+      </Link>
       <p className={styles.searchResultDescription}>{item.description}</p>
     </div>
   );

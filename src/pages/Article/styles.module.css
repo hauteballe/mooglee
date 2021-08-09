@@ -4,7 +4,7 @@
 }
 
 .homeButton {
-  background-color: #fff ;
+  background-color: #fff;
   color: #2f4f4f;
   border: 1px solid #2f4f4f;
   text-decoration: none;
@@ -12,7 +12,7 @@
 }
 
 .homeButton:hover {
-  background-color: #2f4f4f ;
+  background-color: #2f4f4f;
   color: #fff;
 }
 
