@@ -12,7 +12,7 @@ const DefaultHeader = ({ user }) => {
           <a href='../App/App.js'>Почта</a>
         </div>
         <div className={styles.headerLinks}>
-        <Link to="/mooglee/images">Картинки</Link>
+          <Link to='/mooglee/images'>Картинки</Link>
         </div>
         <div className={`${styles.headerLinks} ${styles.userLink}`}>
           <a href='../App/App.js'>{user[0]}</a>

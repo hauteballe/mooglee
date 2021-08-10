@@ -5,19 +5,28 @@ import styles from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
 
 const Images = () => {
+  const { posts, loading } = usePresenter();
 
-  const { postImage  } = usePresenter();
+  if (loading) {
+    return (
+      <div className={styles.loading}>
+        <p>Loading ...</p>
+      </div>
+    );
+  }
 
   return (
-    <div className={styles.articleWrapper}>
+    <div className={styles.imagesWrapper}>
       <Link to='/mooglee' className={styles.homeButton}>
         Home
       </Link>
-      <ul className={styles.posts}>
-        <li className={styles.post}>
-          <img src={postImage} alt="post" />
-          <p>Description</p>
-        </li>
+      <ul className={styles.postsContainer}>
+        {posts.map((post) => (
+          <li key={post.id} className={styles.post}>
+            <img src={post.url} alt='post' className={styles.postImage} />
+            <p className={styles.postTitle}>{post.title}</p>
+          </li>
+        ))}
       </ul>
     </div>
   );
