@@ -6,11 +6,18 @@ const usePresenter = () => {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/photos').then((res) => {
-      console.log(res);
-      setPosts(res.data.splice(0, 20));
-      setLoading(false);
-    });
+    const getData = async () => {
+      await axios
+        .get('https://jsonplaceholder.typicode.com/photos')
+        .then((res) => {
+          setPosts(res.data.splice(0, 20));
+          setLoading(false);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
+    getData();
   }, []);
 
   return { posts, loading };

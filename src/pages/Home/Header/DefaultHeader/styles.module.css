@@ -44,3 +44,8 @@
   text-align: center;
   vertical-align: center;
 }
+
+.postsLink:hover {
+  text-decoration: underline;
+  color: #008b8b;
+}
