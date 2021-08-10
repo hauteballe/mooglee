@@ -5,7 +5,7 @@ import styles from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
 
 const Images = () => {
-  const { posts, loading } = usePresenter();
+  const { posts, loading, error } = usePresenter();
 
   if (loading) {
     return (
@@ -20,6 +20,7 @@ const Images = () => {
       <Link to='/mooglee' className={styles.homeButton}>
         Home
       </Link>
+      {error && <p>{error}</p>}
       <ul className={styles.postsContainer}>
         {posts.map((post) => (
           <li key={post.id} className={styles.post}>
