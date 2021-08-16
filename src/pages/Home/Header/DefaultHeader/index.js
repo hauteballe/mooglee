@@ -17,7 +17,7 @@ const DefaultHeader = ({ user }) => {
           </Link>
         </div>
         <div className={`${styles.headerLinks} ${styles.userLink}`}>
-          <a href='../App/App.js'>{user[0]}</a>
+          <Link to='/mooglee/login'>{user[0]}</Link>
         </div>
       </div>
     </header>
