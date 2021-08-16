@@ -50,7 +50,6 @@ const LoginForm = () => {
       }}
       render={(renderProps) => {
         const { handleSubmit, submitting, submitErrors } = renderProps;
-        console.log(renderProps);
 
         return (
           <div>
