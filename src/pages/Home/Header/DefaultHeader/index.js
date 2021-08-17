@@ -16,9 +16,11 @@ const DefaultHeader = ({ user }) => {
             Картинки
           </Link>
         </div>
-        <div className={`${styles.headerLinks} ${styles.userLink}`}>
-          <Link to='/mooglee/login'>{user[0]}</Link>
-        </div>
+        <Link className={styles.loginLink} to='/mooglee/login'>
+          <div className={`${styles.headerLinks} ${styles.userLink}`}>
+            {user[0]}
+          </div>
+        </Link>
       </div>
     </header>
   );

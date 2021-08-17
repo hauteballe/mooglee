@@ -1,8 +1,6 @@
 import React from 'react';
 
-const TextField = (props) => {
-  const { id, input, meta, ...rest } = props;
-
+const TextField = ({ id, input, meta, ...rest }) => {
   return (
     <div>
       <input id={id} {...rest} {...input} />
