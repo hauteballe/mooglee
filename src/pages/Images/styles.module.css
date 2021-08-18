@@ -12,6 +12,11 @@
   margin-bottom: 30px;
 }
 
+.homeButton:hover {
+  background-color: #2f4f4f;
+  color: #fff;
+}
+
 .postsContainer {
   list-style: none;
   display: flex;
