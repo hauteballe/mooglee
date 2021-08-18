@@ -1,6 +1,6 @@
 import { FORM_ERROR } from 'final-form';
 
-const validateLength = (minLength, maxLength, errorMessage) => (value) => {
+const validateLength = (value, minLength, maxLength, errorMessage) => {
   const defaultErrorMessage = 'Invalid input length';
   let valid = true;
   if (minLength && value.length < minLength) {
@@ -14,14 +14,14 @@ const validateLength = (minLength, maxLength, errorMessage) => (value) => {
   }
 };
 
-const validateRequired = (errorMessage) => (value) => {
+const validateRequired = (value, errorMessage) => {
   const defaultErrorMessage = 'Required';
   if (!value) {
     return errorMessage || defaultErrorMessage;
   }
 };
 
-const validateRegex = (regex, errorMessage) => (value) => {
+const validateRegex = (value, regex, errorMessage) => {
   const defaultErrorMessage = 'Invalid input';
   if (regex && !regex.test(value)) {
     return errorMessage || defaultErrorMessage;
@@ -31,19 +31,23 @@ const validateRegex = (regex, errorMessage) => (value) => {
 const usePresenter = () => {
   const regex = new RegExp('^(?=.*[a-zа-я])(?=.*[A-ZА-Я])(?=.*[0-9])');
 
-  const validators = {
-    username: [
-      validateRequired(),
-      validateLength(3, 30, 'Invalid username length'),
-    ],
-    password: [
-      validateRequired(),
-      validateLength(6, 30, 'Invalid password length'),
+  const validateUsername = (username) => {
+    let error =
+      validateRequired(username) ||
+      validateLength(username, 3, 30, 'Invalid username length');
+    return error;
+  };
+
+  const validatePassword = (password) => {
+    let error =
+      validateRequired(password) ||
+      validateLength(password, 6, 30, 'Invalid password length') ||
       validateRegex(
+        password,
         regex,
         'Password should contain at least one number, one uppercase letter and one lowercase letter'
-      ),
-    ],
+      );
+    return error;
   };
 
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -59,15 +63,13 @@ const usePresenter = () => {
 
   const validate = (values) => {
     const errors = {};
-
-    for (const [field, fieldValidators] of Object.entries(validators)) {
-      for (const validate of fieldValidators) {
-        let error = validate(values[field]);
-        if (error) {
-          errors[field] = error;
-          break;
-        }
-      }
+    let usernameError = validateUsername(values.username);
+    if (usernameError) {
+      errors.username = usernameError;
+    }
+    let passwordError = validatePassword(values.password);
+    if (passwordError) {
+      errors.password = passwordError;
     }
     return errors;
   };
