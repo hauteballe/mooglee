@@ -16,15 +16,10 @@ const usePresenter = () => {
 
   const validate = (values) => {
     const errors = {};
-    if (!values.username) {
-      errors.username = 'Required';
-    }
-    if (!values.password) {
-      errors.password = 'Required';
-    }
     if (
-      values.username &&
-      (values.username.length < 3 || values.username.length > 30)
+      !values.username ||
+      (values.username &&
+        (values.username.length < 3 || values.username.length > 30))
     ) {
       errors.username = 'Invalid username length';
     }
@@ -37,16 +32,13 @@ const usePresenter = () => {
         errors.password = 'Invalid password';
       }
     } else {
-      errors.password = 'invalid password length';
+      errors.password = 'Invalid password length';
     }
 
-    // if (values.password && !regex.test(values.password)) {
-    //   errors.password = 'Invalid password';
-    // }
     return errors;
   };
 
-  return { sleep, onSubmit, validate };
+  return { onSubmit, validate };
 };
 
 export default usePresenter;
