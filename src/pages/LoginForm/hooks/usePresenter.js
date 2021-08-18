@@ -1,7 +1,50 @@
 import { FORM_ERROR } from 'final-form';
 
+const validateLength = (minLength, maxLength, errorMessage) => (value) => {
+  const defaultErrorMessage = 'Invalid input length';
+  let valid = true;
+  if (minLength && value.length < minLength) {
+    valid = false;
+  }
+  if (maxLength && value.length > maxLength) {
+    valid = false;
+  }
+  if (!valid) {
+    return errorMessage || defaultErrorMessage;
+  }
+};
+
+const validateRequired = (errorMessage) => (value) => {
+  const defaultErrorMessage = 'Required';
+  if (!value) {
+    return errorMessage || defaultErrorMessage;
+  }
+};
+
+const validateRegex = (regex, errorMessage) => (value) => {
+  const defaultErrorMessage = 'Invalid input';
+  if (regex && !regex.test(value)) {
+    return errorMessage || defaultErrorMessage;
+  }
+};
+
 const usePresenter = () => {
   const regex = new RegExp('^(?=.*[a-zа-я])(?=.*[A-ZА-Я])(?=.*[0-9])');
+
+  const validators = {
+    username: [
+      validateRequired(),
+      validateLength(3, 30, 'Invalid username length'),
+    ],
+    password: [
+      validateRequired(),
+      validateLength(6, 30, 'Invalid password length'),
+      validateRegex(
+        regex,
+        'Password should contain at least one number, one uppercase letter and one lowercase letter'
+      ),
+    ],
+  };
 
   const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
@@ -16,25 +59,16 @@ const usePresenter = () => {
 
   const validate = (values) => {
     const errors = {};
-    if (
-      !values.username ||
-      (values.username &&
-        (values.username.length < 3 || values.username.length > 30))
-    ) {
-      errors.username = 'Invalid username length';
-    }
-    if (
-      values.password &&
-      values.password.length >= 6 &&
-      values.password.length <= 30
-    ) {
-      if (values.password && !regex.test(values.password)) {
-        errors.password = 'Invalid password';
-      }
-    } else {
-      errors.password = 'Invalid password length';
-    }
 
+    for (const [field, fieldValidators] of Object.entries(validators)) {
+      for (const validate of fieldValidators) {
+        let error = validate(values[field]);
+        if (error) {
+          errors[field] = error;
+          break;
+        }
+      }
+    }
     return errors;
   };
 
