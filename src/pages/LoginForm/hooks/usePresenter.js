@@ -1,4 +1,6 @@
 import { FORM_ERROR } from 'final-form';
+import { useDispatch } from 'react-redux';
+import { add } from '../../../redux/features/addUser/userSlice';
 
 const validateLength = (value, minLength, maxLength, errorMessage) => {
   const defaultErrorMessage = 'Invalid input length';
@@ -30,6 +32,7 @@ const validateRegex = (value, regex, errorMessage) => {
 
 const usePresenter = () => {
   const regex = new RegExp('^(?=.*[a-zа-я])(?=.*[A-ZА-Я])(?=.*[0-9])');
+  const dispatch = useDispatch();
 
   const validateUsername = (username) => {
     let error =
@@ -54,10 +57,11 @@ const usePresenter = () => {
 
   const onSubmit = async (values) => {
     await sleep(3000);
-    if (values.username !== 'Bob' || values.password !== 'theBestBob1') {
+    if (values.password !== 'theBestBob1') {
       return { [FORM_ERROR]: 'Пользователь или пароль неверный' };
     } else {
       console.log('success!');
+      dispatch(add(values.username));
     }
   };
 
