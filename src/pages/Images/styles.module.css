@@ -1,27 +1,31 @@
-.imagesWrapper {
-  margin: 30px;
-}
-
-.homeButton {
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: #fff;
-  color: #2f4f4f;
-  border: 1px solid #2f4f4f;
-  text-decoration: none;
-  padding: 15px;
-  margin-left: 40px;
-  margin-bottom: 30px;
 }
 
-.homeButton:hover {
-  background-color: #2f4f4f;
-  color: #fff;
+.headerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  padding-left: 25px;
+}
+
+.headerLogo {
+  padding-left: 15px;
+  padding-top: 15px;
 }
 
 .postsContainer {
   list-style: none;
   display: flex;
+  margin: 0 auto;
   justify-content: space-between;
   flex-wrap: wrap;
+  padding-inline-start: 0;
+  padding: 35px;
   gap: 10px;
 }
 

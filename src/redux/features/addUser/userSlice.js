@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {};
+const initialState = {
+  isAuthorized: false,
+};
 
 export const userSlice = createSlice({
   name: 'user',
@@ -8,6 +10,7 @@ export const userSlice = createSlice({
   reducers: {
     add: (state, action) => {
       state.username = action.payload;
+      state.isAuthorized = true;
     },
   },
 });

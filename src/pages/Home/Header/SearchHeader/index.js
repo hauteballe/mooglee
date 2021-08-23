@@ -1,17 +1,21 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 import { faCog, faTh } from '@fortawesome/free-solid-svg-icons';
 import Logo from '../../components/Logo';
 import Input from '../../components/Input';
 import CloseIcon from '../../components/CloseIcon';
+import UserIcon from '../UserIcon';
 
 const SearchHeader = ({ user, disableSearchMode, searchText }) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerItem}>
-        <Logo size='small' />
+        <Link to='/mooglee' onClick={disableSearchMode}>
+          <Logo size='small' />
+        </Link>
         <Input value={searchText} onInput={() => {}} />
         <button onClick={disableSearchMode} className={styles.closeButton}>
           <CloseIcon />
@@ -24,9 +28,7 @@ const SearchHeader = ({ user, disableSearchMode, searchText }) => {
         <div className={styles.headerLinks}>
           <FontAwesomeIcon icon={faTh} />
         </div>
-        <div className={`${styles.headerLinks} ${styles.userLink}`}>
-          <a href='../App/App.js'>{user[0]}</a>
-        </div>
+        <UserIcon user={user} />
       </div>
     </header>
   );

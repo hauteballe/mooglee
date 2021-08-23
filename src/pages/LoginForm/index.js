@@ -6,6 +6,9 @@ import { FORM_ERROR } from 'final-form';
 import styles from './styles.module.css';
 import TextField from './components/TextField';
 import usePresenter from './hooks/usePresenter';
+import Footer from '../Home/Footer';
+import Header from '../Home/Header';
+import Logo from '../Home/components/Logo';
 
 const LoginForm = () => {
   const { onSubmit, validate } = usePresenter();
@@ -17,10 +20,15 @@ const LoginForm = () => {
         const { handleSubmit, submitting, submitErrors } = renderProps;
 
         return (
-          <div>
-            <Link to='/mooglee' className={styles.homeButton}>
-              Home
-            </Link>
+          <div className={styles.pageWrapper}>
+            <div className={styles.headerWrapper}>
+              <Link to='/mooglee'>
+                <div className={styles.headerLogo}>
+                  <Logo size='small'></Logo>
+                </div>
+              </Link>
+              <Header user='Ирина' />
+            </div>
             <div className={styles.formWrapper}>
               <form onSubmit={handleSubmit}>
                 <Field
@@ -50,6 +58,7 @@ const LoginForm = () => {
                 )}
               </form>
             </div>
+            <Footer />
           </div>
         );
       }}

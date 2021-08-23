@@ -1,5 +1,17 @@
-* {
-  box-sizing: border-box;
+.pageWrapper {
+  display: flex;
+  background-color: #fff;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.headerWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  padding-left: 25px;
 }
 
 .inputField {
@@ -16,13 +28,15 @@
 }
 
 .formWrapper {
+  display: flex;
+  align-self: center;
+  justify-self: center;
   width: 350px;
-  margin: 200px auto;
 }
 
 .button {
   padding: 10px;
-  margin: 10px;
+  margin: 10px 10px;
   border: none;
   background-color: #2f4f4f;
   color: #fff;
@@ -32,23 +46,12 @@
 }
 
 .button:hover {
-  border: 2px solid #2f4f4f;
-  background-color: #fff;
-  color: #2f4f4f;
-}
-
-.homeButton {
-  background-color: #fff;
-  color: #2f4f4f;
   border: 1px solid #2f4f4f;
-  text-decoration: none;
-  padding: 15px;
-  position: absolute;
-  top: 20px;
-  left: 20px;
+  background-color: #fff;
+  color: #2f4f4f;
 }
 
-.homeButton:hover {
-  background-color: #2f4f4f;
-  color: #fff;
+.headerLogo {
+  padding-left: 15px;
+  padding-top: 15px;
 }

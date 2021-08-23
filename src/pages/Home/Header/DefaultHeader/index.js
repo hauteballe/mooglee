@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
+import UserIcon from '../UserIcon';
 
 const DefaultHeader = ({ user }) => {
   return (
@@ -16,11 +17,9 @@ const DefaultHeader = ({ user }) => {
             Картинки
           </Link>
         </div>
-        <Link className={styles.loginLink} to='/mooglee/login'>
-          <div className={`${styles.headerLinks} ${styles.userLink}`}>
-            {user[0]}
-          </div>
-        </Link>
+        <div>
+          <UserIcon user={user} />
+        </div>
       </div>
     </header>
   );

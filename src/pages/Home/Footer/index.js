@@ -2,11 +2,11 @@ import React from 'react';
 
 import styles from './styles.module.css';
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles.footerLineContainer}>
-        <span className={styles.footerElement}>{props.country}</span>
+        <span className={styles.footerElement}>Беларусь</span>
       </div>
       <div className={styles.footerLineContainer}>
         <span className={styles.footerElement}>Реклама</span>
