@@ -6,8 +6,8 @@ import { FORM_ERROR } from 'final-form';
 import styles from './styles.module.css';
 import TextField from './components/TextField';
 import usePresenter from './hooks/usePresenter';
-import Footer from '../Home/Footer';
-import Header from '../Home/Header';
+import Footer from '../Home/components/Footer';
+import Header from '../Home/components/Header';
 import Logo from '../Home/components/Logo';
 
 const LoginForm = () => {
@@ -27,7 +27,7 @@ const LoginForm = () => {
                   <Logo size='small'></Logo>
                 </div>
               </Link>
-              <Header user='Ирина' />
+              <Header />
             </div>
             <div className={styles.formWrapper}>
               <form onSubmit={handleSubmit}>

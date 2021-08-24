@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 import { faCog, faTh } from '@fortawesome/free-solid-svg-icons';
-import Logo from '../../components/Logo';
-import Input from '../../components/Input';
-import CloseIcon from '../../components/CloseIcon';
-import UserIcon from '../UserIcon';
+import Logo from '../../Logo';
+import Input from '../../Input';
+import CloseIcon from '../../CloseIcon';
+import UserOption from '../UserOption';
 
 const SearchHeader = ({ user, disableSearchMode, searchText }) => {
   return (
@@ -28,7 +28,7 @@ const SearchHeader = ({ user, disableSearchMode, searchText }) => {
         <div className={styles.headerLinks}>
           <FontAwesomeIcon icon={faTh} />
         </div>
-        <UserIcon user={user} />
+        <UserOption user={user} />
       </div>
     </header>
   );

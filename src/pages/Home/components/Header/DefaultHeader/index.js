@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
-import UserIcon from '../UserIcon';
+import UserOption from '../UserOption';
 
 const DefaultHeader = ({ user }) => {
   return (
@@ -18,7 +18,7 @@ const DefaultHeader = ({ user }) => {
           </Link>
         </div>
         <div>
-          <UserIcon user={user} />
+          <UserOption user={user} />
         </div>
       </div>
     </header>

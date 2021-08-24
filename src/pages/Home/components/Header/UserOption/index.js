@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import usePresenter from './hooks/usePresenter';
 
 import styles from './styles.module.css';
 
-const UserIcon = ({ user }) => {
-  if (user.isAuthorized) {
+const UserOption = () => {
+  const { user } = usePresenter();
+
+  if (user.username) {
     return (
       <div className={`${styles.headerLinks} ${styles.userLink}`}>
-        {user.username[0]}
+        {user.username.toUpperCase()[0]}
       </div>
     );
   }
@@ -18,4 +21,4 @@ const UserIcon = ({ user }) => {
   );
 };
 
-export default UserIcon;
+export default UserOption;

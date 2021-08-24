@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
-import Footer from '../Home/Footer';
-import Header from '../Home/Header';
+import Footer from '../Home/components/Footer';
+import Header from '../Home/components/Header';
 import Logo from '../Home/components/Logo';
 
 const Images = () => {
@@ -12,8 +12,19 @@ const Images = () => {
 
   if (loading) {
     return (
-      <div className={styles.loading}>
-        <p>Loading ...</p>
+      <div className={styles.loadingWrapper}>
+        <div className={styles.headerWrapper}>
+          <Link to='/mooglee'>
+            <div className={styles.headerLogo}>
+              <Logo size='small'></Logo>
+            </div>
+          </Link>
+          <Header />
+        </div>
+        <div className={styles.loading}>
+          <p>Loading ...</p>
+        </div>
+        <Footer className={styles.loadingFooter} />
       </div>
     );
   }
