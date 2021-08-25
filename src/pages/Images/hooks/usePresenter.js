@@ -10,7 +10,7 @@ const usePresenter = () => {
     const getData = async () => {
       try {
         const response = await axios.get(
-          'https://jsonplaceholder.typicode.com/photos'
+          'https://api.unsplash.com/photos/random?client_id=YPcf-iCukl1ce8b8kEe645lUD57BYBXO0NcOwderTmY&count=20&orientation=squarish'
         );
         const posts = response.data.splice(0, 20);
         setPosts(posts);

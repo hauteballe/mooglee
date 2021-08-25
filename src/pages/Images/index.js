@@ -3,32 +3,56 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 
 const Images = () => {
   const { posts, loading, error } = usePresenter();
 
   if (loading) {
     return (
-      <div className={styles.loading}>
-        <p>Loading ...</p>
+      <div className={styles.loadingWrapper}>
+        <div className={styles.headerWrapper}>
+          <Link to='/mooglee'>
+            <div className={styles.headerLogo}>
+              <Logo size='small'></Logo>
+            </div>
+          </Link>
+          <Header />
+        </div>
+        <div className={styles.loading}>
+          <p>Loading ...</p>
+        </div>
+        <Footer className={styles.loadingFooter} />
       </div>
     );
   }
 
   return (
-    <div className={styles.imagesWrapper}>
-      <Link to='/mooglee' className={styles.homeButton}>
-        Home
-      </Link>
+    <div className={styles.pageWrapper}>
+      <div className={styles.headerWrapper}>
+        <Link to='/mooglee'>
+          <div className={styles.headerLogo}>
+            <Logo size='small'></Logo>
+          </div>
+        </Link>
+        <Header />
+      </div>
       {error && <p>{error}</p>}
       <ul className={styles.postsContainer}>
         {posts.map((post) => (
           <li key={post.id} className={styles.post}>
-            <img src={post.url} alt='post' className={styles.postImage} />
+            <img
+              src={post.urls.small}
+              alt='post'
+              className={styles.postImage}
+            />
             <p className={styles.postTitle}>{post.title}</p>
           </li>
         ))}
       </ul>
+      <Footer />
     </div>
   );
 };

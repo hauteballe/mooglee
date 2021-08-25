@@ -1,9 +1,9 @@
 import React from 'react';
 
 import styles from './styles.module.css';
-import Header from '../Home/Header';
+import Header from '../../components/Header';
 import Main from '../Home/Main';
-import Footer from '../Home/Footer';
+import Footer from '../../components/Footer';
 import usePresenter from './hooks/usePresenter';
 
 const HomePage = () => {

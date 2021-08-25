@@ -1,6 +1,7 @@
 import { FORM_ERROR } from 'final-form';
 import { useDispatch } from 'react-redux';
 import { add } from '../../../redux/features/addUser/userSlice';
+import { useHistory } from 'react-router-dom';
 
 const validateLength = (value, minLength, maxLength, errorMessage) => {
   const defaultErrorMessage = 'Invalid input length';
@@ -33,6 +34,11 @@ const validateRegex = (value, regex, errorMessage) => {
 const usePresenter = () => {
   const regex = new RegExp('^(?=.*[a-zа-я])(?=.*[A-ZА-Я])(?=.*[0-9])');
   const dispatch = useDispatch();
+  const history = useHistory();
+
+  const redirectToHomepage = () => {
+    history.push('/mooglee');
+  };
 
   const validateUsername = (username) => {
     let error =
@@ -62,6 +68,7 @@ const usePresenter = () => {
     } else {
       console.log('success!');
       dispatch(add(values.username));
+      redirectToHomepage();
     }
   };
 

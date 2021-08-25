@@ -3,18 +3,12 @@ import React from 'react';
 import DefaultHeader from './DefaultHeader';
 import SearchHeader from './SearchHeader';
 
-const Header = ({
-  user,
-  isSearchModeEnabled,
-  disableSearchMode,
-  searchText,
-}) => {
+const Header = ({ isSearchModeEnabled, disableSearchMode, searchText }) => {
   if (!isSearchModeEnabled) {
-    return <DefaultHeader user={user} />;
+    return <DefaultHeader />;
   } else {
     return (
       <SearchHeader
-        user={user}
         disableSearchMode={disableSearchMode}
         searchText={searchText}
       />
