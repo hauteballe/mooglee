@@ -10,7 +10,6 @@ export const userSlice = createSlice({
   reducers: {
     add: (state, action) => {
       state.username = action.payload;
-      state.isAuthorized = Boolean(state.username);
     },
   },
 });

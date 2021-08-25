@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 
 import styles from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
-import Footer from '../Home/components/Footer';
-import Header from '../Home/components/Header';
-import Logo from '../Home/components/Logo';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 
 const Images = () => {
   const { posts, loading, error } = usePresenter();

@@ -6,9 +6,9 @@ import { FORM_ERROR } from 'final-form';
 import styles from './styles.module.css';
 import TextField from './components/TextField';
 import usePresenter from './hooks/usePresenter';
-import Footer from '../Home/components/Footer';
-import Header from '../Home/components/Header';
-import Logo from '../Home/components/Logo';
+import Footer from '../../components/Footer';
+import Header from '../../components/Header';
+import Logo from '../../components/Logo';
 
 const LoginForm = () => {
   const { onSubmit, validate } = usePresenter();
