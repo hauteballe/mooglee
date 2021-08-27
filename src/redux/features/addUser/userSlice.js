@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  isAuthorized: false,
+  username: localStorage.getItem('username'),
 };
 
 export const userSlice = createSlice({
@@ -10,6 +10,11 @@ export const userSlice = createSlice({
   reducers: {
     add: (state, action) => {
       state.username = action.payload;
+      localStorage.setItem('username', action.payload);
+    },
+    remove: () => {
+      localStorage.removeItem('username');
+      return {};
     },
   },
 });
