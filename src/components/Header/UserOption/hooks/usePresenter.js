@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const usePresenter = () => {
@@ -7,7 +8,17 @@ const usePresenter = () => {
     userAbbreviation = user.username.toUpperCase()[0];
   }
 
-  return { userAbbreviation };
+  const [anchorElement, setAnchorElement] = useState(null);
+
+  const onClick = (ev) => {
+    if (anchorElement) {
+      setAnchorElement(null);
+    } else {
+      setAnchorElement(ev.target);
+    }
+  };
+
+  return { userAbbreviation, onClick, anchorElement };
 };
 
 export default usePresenter;

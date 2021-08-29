@@ -28,4 +28,9 @@
   color: #ffffff;
   text-decoration: none;
   font-size: 15px;
+  cursor: pointer;
+}
+
+.userLinkActive {
+  background-color: #2f4f4f;
 }

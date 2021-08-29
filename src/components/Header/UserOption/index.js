@@ -7,15 +7,20 @@ import styles from './styles.module.css';
 import DropdownMenu from '../DropdownMenu';
 
 const UserOption = () => {
-  const { userAbbreviation } = usePresenter();
+  const { userAbbreviation, onClick, anchorElement } = usePresenter();
 
   if (userAbbreviation) {
     return (
       <div>
-        <div className={classNames(styles.headerLinks, styles.userLink)}>
+        <div
+          onClick={onClick}
+          className={classNames(styles.headerLinks, styles.userLink, {
+            [styles.userLinkActive]: Boolean(anchorElement),
+          })}
+        >
           {userAbbreviation}
         </div>
-        <DropdownMenu />
+        <DropdownMenu anchorElement={anchorElement} />
       </div>
     );
   }
