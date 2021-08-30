@@ -1,24 +1,27 @@
+import React from 'react';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
 
 const usePresenter = () => {
+  const anchorElement = React.useRef();
+
   const user = useSelector((state) => state.user);
   let userAbbreviation;
   if (user.username) {
     userAbbreviation = user.username.toUpperCase()[0];
   }
 
-  const [anchorElement, setAnchorElement] = useState(null);
+  const [isOpen, setOpen] = useState(false);
 
-  const onClick = (ev) => {
-    if (anchorElement) {
-      setAnchorElement(null);
-    } else {
-      setAnchorElement(ev.target);
-    }
+  const onClose = () => {
+    setOpen(false);
   };
 
-  return { userAbbreviation, onClick, anchorElement };
+  const onClick = () => {
+    setOpen(!isOpen);
+  };
+
+  return { userAbbreviation, onClick, anchorElement, isOpen, onClose };
 };
 
 export default usePresenter;

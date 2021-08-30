@@ -67,6 +67,7 @@ const usePresenter = () => {
       return { [FORM_ERROR]: 'Пользователь или пароль неверный' };
     } else {
       console.log('success!');
+      localStorage.setItem('username', values.username);
       dispatch(add(values.username));
       redirectToHomepage();
     }

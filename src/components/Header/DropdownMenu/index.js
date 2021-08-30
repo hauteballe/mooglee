@@ -2,19 +2,16 @@ import React from 'react';
 import { default as moduleStyles } from './styles.module.css';
 import usePresenter from './hooks/usePresenter';
 
-const DropdownMenu = ({ anchorElement }) => {
+const DropdownMenu = ({ anchorElement, isOpen, onClose }) => {
   const { onClick, setPopperElement, styles, attributes } = usePresenter({
     anchorElement,
+    onClose,
   });
 
   return (
-    <>
-      {Boolean(anchorElement) ? (
-        <div
-          ref={setPopperElement}
-          style={styles.popper}
-          {...attributes.popper}
-        >
+    <div ref={setPopperElement} {...attributes.popper} style={styles.popper}>
+      {isOpen ? (
+        <div>
           <div className={moduleStyles.popper}>
             <button className={moduleStyles.button} onClick={onClick}>
               Выйти
@@ -22,7 +19,7 @@ const DropdownMenu = ({ anchorElement }) => {
           </div>
         </div>
       ) : null}
-    </>
+    </div>
   );
 };
 

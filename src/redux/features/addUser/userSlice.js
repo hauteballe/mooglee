@@ -10,10 +10,8 @@ export const userSlice = createSlice({
   reducers: {
     add: (state, action) => {
       state.username = action.payload;
-      localStorage.setItem('username', action.payload);
     },
     remove: () => {
-      localStorage.removeItem('username');
       return {};
     },
   },
