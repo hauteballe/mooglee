@@ -4,14 +4,29 @@ import usePresenter from './hooks/usePresenter';
 import classNames from 'classnames';
 
 import styles from './styles.module.css';
+import DropdownMenu from '../DropdownMenu';
 
 const UserOption = () => {
-  const { userAbbreviation } = usePresenter();
+  const { userAbbreviation, onClick, anchorElement, isOpen, onClose } =
+    usePresenter();
 
   if (userAbbreviation) {
     return (
-      <div className={classNames(styles.headerLinks, styles.userLink)}>
-        {userAbbreviation}
+      <div>
+        <div
+          ref={anchorElement}
+          onClick={onClick}
+          className={classNames(styles.headerLinks, styles.userLink, {
+            [styles.userLinkActive]: isOpen,
+          })}
+        >
+          {userAbbreviation}
+        </div>
+        <DropdownMenu
+          anchorElement={anchorElement}
+          isOpen={isOpen}
+          onClose={onClose}
+        />
       </div>
     );
   }
