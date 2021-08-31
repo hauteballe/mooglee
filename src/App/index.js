@@ -5,6 +5,7 @@ import HomePage from '../pages/Home';
 import Article from '../pages/Article';
 import Images from '../pages/Images';
 import LoginForm from '../pages/LoginForm';
+import PrivateRoute from '../components/PrivateRoute';
 
 const App = () => {
   return (
@@ -16,9 +17,9 @@ const App = () => {
         <Route path='/mooglee/article/:id'>
           <Article />
         </Route>
-        <Route path='/mooglee/images'>
+        <PrivateRoute path='/mooglee/images'>
           <Images />
-        </Route>
+        </PrivateRoute>
         <Route path='/mooglee/login'>
           <LoginForm />
         </Route>

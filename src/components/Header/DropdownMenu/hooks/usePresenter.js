@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { usePopper } from 'react-popper';
 
 import { useDispatch } from 'react-redux';
