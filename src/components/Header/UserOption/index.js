@@ -23,7 +23,7 @@ const UserOption = () => {
           {userAbbreviation}
         </div>
         <DropdownMenu
-          anchorElement={anchorElement.current}
+          anchorElement={anchorElement}
           isOpen={isOpen}
           onClose={onClose}
         />

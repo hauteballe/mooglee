@@ -1,11 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { usePopper } from 'react-popper';
 
 import { useDispatch } from 'react-redux';
 import { remove } from '../../../../redux/features/addUser/userSlice';
-import useOutsideClick from './useOutsideClick';
 
-const usePresenter = ({ anchorElement, onClose }) => {
+const usePresenter = ({ anchorElement }) => {
   const dispatch = useDispatch();
 
   const onClick = (values) => {
@@ -14,10 +13,11 @@ const usePresenter = ({ anchorElement, onClose }) => {
   };
 
   const [popperElement, setPopperElement] = useState(null);
-  const { styles, attributes } = usePopper(anchorElement, popperElement);
-
-  useOutsideClick(anchorElement, popperElement, onClose);
-  return { onClick, setPopperElement, styles, attributes, anchorElement };
+  const { styles, attributes } = usePopper(
+    anchorElement.current,
+    popperElement
+  );
+  return { onClick, setPopperElement, styles, attributes };
 };
 
 export default usePresenter;
